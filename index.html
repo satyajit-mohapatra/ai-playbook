@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Playbook | 90-Day Senior Engineer Guide</title>
+    <meta name="description"
+        content="Interactive 90-day guide for Senior Engineers to master AI-assisted development with prompts, checklists, and curated resources.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">AI Playbook</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item active" data-section="dashboard">
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </li>
+                <li class="nav-item" data-section="journey">
+                    <span class="nav-icon">🎯</span>
+                    <span>90-Day Journey</span>
+                </li>
+                <li class="nav-item" data-section="prompts">
+                    <span class="nav-icon">💬</span>
+                    <span>Prompt Library</span>
+                </li>
+                <li class="nav-item" data-section="resources">
+                    <span class="nav-icon">📚</span>
+                    <span>Resources</span>
+                </li>
+                <li class="nav-item" data-section="ai-tools-guide">
+                    <span class="nav-icon">🔌</span>
+                    <span>AI Tools Guide</span>
+                </li>
+                <li class="nav-item" data-section="concepts-comparison">
+                    <span class="nav-icon">⚖️</span>
+                    <span>Concepts Comparison</span>
+                </li>
+                <li class="nav-item" data-section="context-engineering">
+                    <span class="nav-icon">🧠</span>
+                    <span>Context Engineering</span>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <button class="reset-btn" onclick="resetProgress()">
+                    <span>🔄</span> Reset Progress
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <div class="section-header">
+                    <h1>AI Engineering Playbook</h1>
+                    <p class="subtitle">Your 90-day journey to AI-first development mastery</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card gradient-blue">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="overall-progress">0%</span>
+                            <span class="stat-label">Overall Progress</span>
+                        </div>
+                    </div>
+                    <div class="stat-card gradient-purple">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="tasks-completed">0</span>
+                            <span class="stat-label">Tasks Completed</span>
+                        </div>
+                    </div>
+                    <div class="stat-card gradient-green">
+                        <div class="stat-icon">📅</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="current-day">Day 1</span>
+                            <span class="stat-label">Current Phase</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="phase-cards">
+                    <div class="phase-card" onclick="navigateToPhase('foundation')">
+                        <div class="phase-header">
+                            <span class="phase-badge foundation">Phase 1</span>
+                            <span class="phase-days">Days 1-30</span>
+                        </div>
+                        <h3>🌱 Foundation: Learning the Basics</h3>
+                        <p>Get familiar with AI tools, basic prompting, and understand how to communicate effectively
+                            with AI assistants.</p>
+                        <div class="phase-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="phase1-progress" style="width: 0%"></div>
+                            </div>
+                            <span class="progress-text">0% complete</span>
+                        </div>
+                    </div>
+
+                    <div class="phase-card" onclick="navigateToPhase('acceleration')">
+                        <div class="phase-header">
+                            <span class="phase-badge acceleration">Phase 2</span>
+                            <span class="phase-days">Days 31-60</span>
+                        </div>
+                        <h3>🚀 Acceleration: Building Expertise</h3>
+                        <p>Master agent workflows, multi-step tasks, and develop production-ready features with AI
+                            assistance.</p>
+                        <div class="phase-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="phase2-progress" style="width: 0%"></div>
+                            </div>
+                            <span class="progress-text">0% complete</span>
+                        </div>
+                    </div>
+
+                    <div class="phase-card" onclick="navigateToPhase('mastery')">
+                        <div class="phase-header">
+                            <span class="phase-badge mastery">Phase 3</span>
+                            <span class="phase-days">Days 61-90</span>
+                        </div>
+                        <h3>🎯 Mastery: Expert-Level Production</h3>
+                        <p>Lead AI adoption, create production-ready systems, and leverage advanced AI features for
+                            complex engineering.</p>
+                        <div class="phase-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="phase3-progress" style="width: 0%"></div>
+                            </div>
+                            <span class="progress-text">0% complete</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <h2>Quick Actions</h2>
+                    <div class="action-buttons">
+                        <button class="action-btn" onclick="navigateTo('journey')">
+                            <span>🎯</span> Start 90-Day Journey
+                        </button>
+                        <button class="action-btn" onclick="navigateTo('prompts')">
+                            <span>💬</span> Browse Prompts
+                        </button>
+                        <button class="action-btn" onclick="navigateTo('resources')">
+                            <span>📚</span> Learning Resources
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Unified 90-Day Journey Section -->
+            <section id="journey" class="content-section">
+                <div class="section-header">
+                    <h1>🎯 90-Day AI Engineering Journey</h1>
+                    <p class="subtitle">From AI-curious to Production-Ready Expert — A Senior Engineer's Guide</p>
+                </div>
+
+                <!-- Phase Tabs -->
+                <div class="phase-tabs">
+                    <button class="phase-tab active" data-phase="foundation" onclick="switchPhase('foundation')">
+                        <span class="tab-icon">🌱</span>
+                        <span class="tab-label">Phase 1: Foundation</span>
+                        <span class="tab-days">Days 1-30</span>
+                    </button>
+                    <button class="phase-tab" data-phase="acceleration" onclick="switchPhase('acceleration')">
+                        <span class="tab-icon">🚀</span>
+                        <span class="tab-label">Phase 2: Acceleration</span>
+                        <span class="tab-days">Days 31-60</span>
+                    </button>
+                    <button class="phase-tab" data-phase="mastery" onclick="switchPhase('mastery')">
+                        <span class="tab-icon">🎯</span>
+                        <span class="tab-label">Phase 3: Mastery</span>
+                        <span class="tab-days">Days 61-90</span>
+                    </button>
+                </div>
+
+                <!-- Phase Content Panels -->
+                <div class="phase-content-container">
+                    <div id="phase-foundation" class="phase-panel active">
+                        <div class="phase-intro">
+                            <h2>🌱 Phase 1: Foundation — Learning the Basics</h2>
+                            <p class="phase-description">
+                                <strong>For Senior Engineers new to AI coding assistance.</strong> This phase introduces
+                                you to AI tools,
+                                basic prompting patterns, and context management. By the end of this phase, you'll
+                                comfortably use AI
+                                for daily coding tasks and understand how to communicate effectively with AI assistants.
+                            </p>
+                            <div class="phase-goals">
+                                <h4>🎯 Phase Goals</h4>
+                                <ul>
+                                    <li>Set up and configure AI coding tools in your IDE</li>
+                                    <li>Understand context windows and how AI "sees" your code</li>
+                                    <li>Master basic prompting patterns for code generation</li>
+                                    <li>Generate tests and documentation with AI</li>
+                                    <li>Use AI for code review and optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="phase1-content"></div>
+                    </div>
+
+                    <div id="phase-acceleration" class="phase-panel">
+                        <div class="phase-intro">
+                            <h2>🚀 Phase 2: Acceleration — Building Expertise</h2>
+                            <p class="phase-description">
+                                <strong>Level up from basic usage to production workflows.</strong> This phase focuses
+                                on agent-based
+                                development, multi-step tasks, and building complete features with AI assistance. You'll
+                                learn to
+                                leverage AI for complex engineering challenges.
+                            </p>
+                            <div class="phase-goals">
+                                <h4>🎯 Phase Goals</h4>
+                                <ul>
+                                    <li>Understand agent vs. chat modes and when to use each</li>
+                                    <li>Build complete features end-to-end with AI agents</li>
+                                    <li>Create reusable prompt templates and workflows</li>
+                                    <li>Automate repetitive development tasks</li>
+                                    <li>Develop production-ready code with AI assistance</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="phase2-content"></div>
+                    </div>
+
+                    <div id="phase-mastery" class="phase-panel">
+                        <div class="phase-intro">
+                            <h2>🎯 Phase 3: Mastery — Expert-Level Production</h2>
+                            <p class="phase-description">
+                                <strong>Become an AI-augmented engineering leader.</strong> This phase covers
+                                system-level thinking,
+                                advanced AI features (MCP, skills, subagents), and team enablement. You'll be able to
+                                generate
+                                production-ready features using the full spectrum of AI capabilities.
+                            </p>
+                            <div class="phase-goals">
+                                <h4>🎯 Phase Goals</h4>
+                                <ul>
+                                    <li>Use AI for architecture decisions and technical RFCs</li>
+                                    <li>Master advanced features: MCP servers, skills, subagents</li>
+                                    <li>Generate production-ready systems with AI</li>
+                                    <li>Lead team AI adoption and create standards</li>
+                                    <li>Measure and demonstrate productivity improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="phase3-content"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Prompts Section -->
+            <section id="prompts" class="content-section">
+                <div class="section-header">
+                    <h1>💬 Prompt Library</h1>
+                    <p class="subtitle">Copy-paste prompts for every situation</p>
+                </div>
+                <div id="prompts-content"></div>
+            </section>
+
+            <!-- Resources Section -->
+            <section id="resources" class="content-section">
+                <div class="section-header">
+                    <h1>📚 Learning Resources</h1>
+                    <p class="subtitle">Curated repositories, guides, and tools</p>
+                </div>
+                <div id="resources-content"></div>
+            </section>
+
+            <!-- AI Tools Guide Section -->
+            <section id="ai-tools-guide" class="content-section">
+                <div class="section-header">
+                    <h1>🔌 AI Tools Guide</h1>
+                    <p class="subtitle">MCP Servers, Skills, Agents, Subagents & Custom Instructions</p>
+                </div>
+                <div id="ai-tools-content"></div>
+            </section>
+
+            <!-- Concepts Comparison Section -->
+            <section id="concepts-comparison" class="content-section">
+                <div class="section-header">
+                    <h1>⚖️ AI Concepts Comparison</h1>
+                    <p class="subtitle">Instructions vs Prompts vs Commands vs Skills vs Agents vs Subagents + OpenCode
+                    </p>
+                </div>
+                <div id="concepts-comparison-content"></div>
+            </section>
+
+            <!-- Context Engineering Section -->
+            <section id="context-engineering" class="content-section">
+                <div class="section-header">
+                    <h1>🧠 Context Engineering</h1>
+                    <p class="subtitle">Master the art of providing context to AI</p>
+                </div>
+                <div id="context-content"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Prompt Modal -->
+    <div id="prompt-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Prompt</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <pre id="modal-prompt"></pre>
+            </div>
+            <div class="modal-footer">
+                <button class="copy-btn" onclick="copyPrompt()">
+                    <span>📋</span> Copy to Clipboard
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
