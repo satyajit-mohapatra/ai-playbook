@@ -13,23 +13,109 @@ document.addEventListener('DOMContentLoaded', () => {
     renderAllContent();
     updateStats();
     setupNavigation();
+    loadOpencodePage(currentOpencodePage);
 });
 
 // Navigation
 function setupNavigation() {
-    document.querySelectorAll('.nav-item').forEach(item => {
+    // Main nav items
+    document.querySelectorAll('.nav-item[data-section]').forEach(item => {
         item.addEventListener('click', () => {
             const section = item.dataset.section;
             navigateTo(section);
         });
     });
+    
+    // Submenu toggles
+    document.querySelectorAll('.nav-item.has-submenu').forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const submenuId = item.dataset.submenu;
+            const submenu = document.getElementById(`submenu-${submenuId}`);
+            if (submenu) {
+                submenu.classList.toggle('expanded');
+                item.classList.toggle('expanded');
+            }
+        });
+    });
+    
+    // Subitems
+    document.querySelectorAll('.nav-subitem[data-section]').forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const section = item.dataset.section;
+            const phase = item.dataset.phase;
+            navigateTo(section, phase);
+        });
+    });
+    
+    // Nested toggles
+    document.querySelectorAll('.nav-subitem.has-nested').forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const nestedId = item.dataset.nested;
+            const nested = document.getElementById(`nested-${nestedId}`);
+            if (nested) {
+                nested.classList.toggle('expanded');
+                item.classList.toggle('expanded');
+            }
+        });
+    });
+    
+    // Nested2 toggles
+    document.querySelectorAll('.nav-nesteditem.has-nested2').forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const nested2Id = item.dataset.nested2;
+            const nested2 = document.getElementById(`nested2-${nested2Id}`);
+            if (nested2) {
+                nested2.classList.toggle('expanded');
+                item.classList.toggle('expanded');
+            }
+        });
+    });
+    
+    // Nested items
+    document.querySelectorAll('.nav-nesteditem[data-section]').forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const section = item.dataset.section;
+            const opencodePage = item.dataset.opencodePage;
+            navigateTo(section, null, opencodePage);
+        });
+    });
+    
+    // Nested2 items
+    document.querySelectorAll('.nav-nested2item[data-section]').forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const section = item.dataset.section;
+            const opencodePage = item.dataset.opencodePage;
+            navigateTo(section, null, opencodePage);
+        });
+    });
 }
 
-function navigateTo(sectionId) {
-    // Update nav
-    document.querySelectorAll('.nav-item').forEach(item => {
-        item.classList.toggle('active', item.dataset.section === sectionId);
+function navigateTo(sectionId, phaseName = null, opencodePage = null) {
+    // Update nav active states
+    document.querySelectorAll('.nav-item, .nav-subitem, .nav-nesteditem, .nav-nested2item').forEach(item => {
+        item.classList.remove('active');
     });
+    
+    // Set active for the clicked item
+    if (opencodePage) {
+        document.querySelectorAll(`[data-opencode-page="${opencodePage}"]`).forEach(item => {
+            item.classList.add('active');
+        });
+    } else if (phaseName) {
+        document.querySelectorAll(`.nav-subitem[data-phase="${phaseName}"]`).forEach(item => {
+            item.classList.add('active');
+        });
+    } else {
+        document.querySelectorAll(`.nav-item[data-section="${sectionId}"]`).forEach(item => {
+            item.classList.add('active');
+        });
+    }
 
     // Update content
     document.querySelectorAll('.content-section').forEach(section => {
@@ -37,6 +123,16 @@ function navigateTo(sectionId) {
     });
 
     currentSection = sectionId;
+    
+    // Handle OpenCode page loading
+    if (sectionId === 'opencode' && opencodePage) {
+        loadOpencodePage(opencodePage);
+    }
+    
+    // Handle phase switching
+    if (sectionId === 'journey' && phaseName) {
+        switchPhase(phaseName);
+    }
 }
 
 // Navigate to journey section and activate specific phase
@@ -68,6 +164,7 @@ function renderAllContent() {
     renderAIToolsGuide();
     renderConceptsComparison();
     renderContextEngineering();
+    renderSkillsLibrary();
 }
 
 function renderPhase(containerId, data) {
@@ -1033,13 +1130,188 @@ function escapeAttr(str) {
 }
 
 function escapeTemplate(str) {
-    return str.replace(/`/g, '\\`').replace(/\$/g, '\\$');
+    return str.replace(/`/g, '\\`').replace(/\$/g, '\\$').replace(/"/g, '\u0026quot;');
+}
+
+function renderSkillsLibrary() {
+    const container = document.getElementById('skills-grid');
+    if (!container) return;
+
+    const data = SKILLS_LIBRARY_DATA;
+    let html = '';
+
+    data.categories.forEach(category => {
+        html += `
+            <div class="skills-category">
+                <h2 class="category-title">
+                    <span class="category-icon">${category.icon}</span>
+                    ${category.name}
+                </h2>
+                <div class="skills-grid-inner">
+                    ${category.skills.map(skill => `
+                        <div class="skill-card">
+                            <div class="skill-card-header">
+                                <h3>${skill.name}</h3>
+                            </div>
+                            <p class="skill-card-description">${skill.description}</p>
+                            <span class="skill-card-short">${skill.short}</span>
+                            <div class="skill-card-buttons">
+                                <button class="skill-btn skill-btn-view" onclick="viewSkill('${skill.id}')">
+                                    <span>👁️</span> View
+                                </button>
+                                <button class="skill-btn skill-btn-copy" onclick="copySkill('${skill.id}')">
+                                    <span>📋</span> Copy
+                                </button>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+    });
+
+    container.innerHTML = html;
+
+    // Add styles if not exists
+    if (!document.getElementById('skills-styles')) {
+        const styles = `
+            .skills-category {
+                margin-bottom: 2rem;
+            }
+            .category-title {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin-bottom: 1rem;
+                font-size: 1.125rem;
+                color: var(--text-primary);
+            }
+            .category-icon {
+                font-size: 1.25rem;
+            }
+            .skills-grid-inner {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                gap: 1rem;
+            }
+            .skill-card {
+                background: var(--card-bg);
+                border: 1px solid var(--border-color);
+                border-radius: var(--radius-md);
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                transition: all 0.2s ease;
+            }
+            .skill-card:hover {
+                border-color: var(--accent-color);
+                box-shadow: var(--shadow-md);
+            }
+            .skill-card-header h3 {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+                color: var(--text-primary);
+            }
+            .skill-card-description {
+                font-size: 0.875rem;
+                color: var(--text-secondary);
+                margin-bottom: 0.5rem;
+                line-height: 1.5;
+                flex: 1;
+            }
+            .skill-card-short {
+                font-size: 0.75rem;
+                color: var(--text-muted);
+                margin-bottom: 0.75rem;
+            }
+            .skill-card-buttons {
+                display: flex;
+                gap: 0.5rem;
+                margin-top: auto;
+            }
+        `;
+        const styleSheet = document.createElement('style');
+        styleSheet.id = 'skills-styles';
+        styleSheet.textContent = styles;
+        document.head.appendChild(styleSheet);
+    }
+}
+
+// Current skill for modal/copy operations
+let currentSkillData = null;
+
+// View skill in modal
+function viewSkill(skillId) {
+    const skillData = getSkillData(skillId);
+    if (!skillData) return;
+
+    currentSkillData = skillData;
+
+    // Update modal content
+    document.getElementById('skill-modal-title').textContent = formatSkillName(skillId);
+    document.getElementById('skill-modal-description').textContent = skillData.description;
+    document.getElementById('skill-modal-frontmatter').textContent = skillData.frontmatter;
+    document.getElementById('skill-modal-body').textContent = skillData.body;
+
+    // Show modal
+    document.getElementById('skill-modal').classList.add('active');
+}
+
+// Copy skill to clipboard
+function copySkill(skillId) {
+    const skillData = getSkillData(skillId);
+    if (!skillData) return;
+
+    const fullContent = `${skillData.frontmatter}\n\n${skillData.body}`;
+    copyToClipboard(fullContent);
+}
+
+// Close skill modal
+function closeSkillModal() {
+    document.getElementById('skill-modal').classList.remove('active');
+    currentSkillData = null;
+}
+
+// Copy full SKILL.md
+function copySkillFull() {
+    if (!currentSkillData) return;
+    const fullContent = `${currentSkillData.frontmatter}\n\n${currentSkillData.body}`;
+    copyToClipboard(fullContent);
+    closeSkillModal();
+}
+
+// Copy frontmatter only
+function copySkillFrontmatter() {
+    if (!currentSkillData) return;
+    copyToClipboard(currentSkillData.frontmatter);
+}
+
+// Copy body only
+function copySkillBody() {
+    if (!currentSkillData) return;
+    copyToClipboard(currentSkillData.body);
+}
+
+// Get skill data from skills-data.js
+function getSkillData(skillId) {
+    if (typeof skillsData !== 'undefined' && skillsData[skillId]) {
+        return skillsData[skillId];
+    }
+    return null;
+}
+
+// Format skill ID to readable name
+function formatSkillName(skillId) {
+    return skillId.split('-').map(word =>
+        word.charAt(0).toUpperCase() + word.slice(1)
+    ).join(' ');
 }
 
 // Close modal on outside click
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal')) {
         closeModal();
+        closeSkillModal();
     }
 });
 
@@ -1049,3 +1321,32 @@ document.addEventListener('keydown', (e) => {
         closeModal();
     }
 });
+
+// ========================================
+// OpenCode Documentation Navigation
+// ========================================
+
+let currentOpencodePage = 'intro';
+
+// Load OpenCode page content
+function loadOpencodePage(pageId) {
+    currentOpencodePage = pageId;
+    
+    // Update active states
+    document.querySelectorAll('.nav-item, .nav-subitem, .nav-nesteditem, .nav-nested2item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    document.querySelectorAll(`[data-opencode-page="${pageId}"]`).forEach(item => {
+        item.classList.add('active');
+    });
+    
+    // Load content
+    const contentContainer = document.getElementById('opencode-page-content');
+    if (contentContainer && typeof opencodeDocs !== 'undefined' && opencodeDocs[pageId]) {
+        contentContainer.innerHTML = opencodeDocs[pageId].content;
+        
+        // Scroll to top
+        document.querySelector('.main-content').scrollTop = 0;
+    }
+}

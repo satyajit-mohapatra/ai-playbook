@@ -220,6 +220,104 @@ Include: input validation, error handling, TypeScript types`
 - [requirement 2]
 
 Include TypeScript types and basic tests.`
+                },
+                {
+                    title: "CLI Tool",
+                    description: "Create a command-line interface tool",
+                    preview: "Create a CLI tool for [purpose]...",
+                    full: `Create a CLI tool using [Commander.js/Click/Cobra]:
+
+**Purpose:** [what the CLI does]
+
+**Commands:**
+1. [command1]: [description]
+2. [command2]: [description]
+
+**Options/Flags:**
+- --verbose: Enable detailed logging
+- --output: Output file path
+- [Other flags]
+
+Include:
+1. Argument parsing
+2. Help text and usage examples
+3. Error handling with user-friendly messages
+4. Input validation
+5. Progress indicators for long operations
+6. Colored output
+7. Config file support
+8. Exit codes (0 = success, 1 = error)`
+                },
+                {
+                    title: "GraphQL API",
+                    description: "Create GraphQL schema and resolvers",
+                    preview: "Create GraphQL schema for [domain]...",
+                    full: `Create a GraphQL API for [domain/resource]:
+
+**Types needed:**
+1. [Type1]: [fields]
+2. [Type2]: [fields]
+
+**Operations:**
+- Queries: [list queries]
+- Mutations: [list mutations]
+- Subscriptions: [if needed]
+
+Generate:
+1. GraphQL schema (SDL)
+2. Resolver implementations
+3. Input types for mutations
+4. Custom scalars (if needed)
+5. DataLoader for N+1 prevention
+6. Error handling
+7. Authentication checks
+8. Example queries and mutations`
+                },
+                {
+                    title: "Webhook Handler",
+                    description: "Create webhook receiver and processor",
+                    preview: "Create webhook handler for [service]...",
+                    full: `Create a webhook handler for [service] webhooks:
+
+**Webhook provider:** [Stripe/GitHub/Shopify/etc]
+**Events to handle:**
+1. [Event 1]
+2. [Event 2]
+
+Include:
+1. Webhook signature verification
+2. Event parsing and validation
+3. Idempotency handling (prevent duplicates)
+4. Async processing (queue)
+5. Error handling and retries
+6. Logging for debugging
+7. Response handling (200 OK)
+8. Test webhook endpoint
+9. Event type routing
+10. Dead letter queue for failures`
+                },
+                {
+                    title: "Middleware/Interceptor",
+                    description: "Create middleware for common concerns",
+                    preview: "Create [type] middleware...",
+                    full: `Create a middleware/interceptor for: [purpose]
+
+**Framework:** [Express/FastAPI/Spring/etc]
+**Type:** [Authentication/Logging/Rate Limiting/CORS/etc]
+
+**Requirements:**
+[Specific requirements for the middleware]
+
+Include:
+1. Middleware function/class
+2. Configuration options
+3. Error handling
+4. Next() / chain continuation
+5. Request/response modification
+6. Performance considerations
+7. Testing examples
+8. Usage documentation
+9. Integration with existing middleware stack`
                 }
             ]
         },
@@ -281,6 +379,89 @@ Include TypeScript types for mocks.`
 4. Accessibility
 
 Create: page objects, fixtures, test implementation, CI config.`
+                },
+                {
+                    title: "Integration Tests",
+                    description: "Create integration tests for APIs/services",
+                    preview: "Create integration tests for [API/service]...",
+                    full: `Create integration tests for [API/service]:
+
+**System under test:**
+[Describe the API or service]
+
+**Dependencies:**
+- Database: [type]
+- External services: [list]
+- Message queues: [if any]
+
+**Test scenarios:**
+1. [Scenario 1]
+2. [Scenario 2]
+
+Include:
+1. Test setup (database seeding, service mocking)
+2. API call tests with assertions
+3. Database state verification
+4. External service mock configurations
+5. Error scenario testing
+6. Transaction rollback tests
+7. Teardown and cleanup
+8. Test data factories
+9. Parallel execution safety`
+                },
+                {
+                    title: "Performance/Load Tests",
+                    description: "Create performance test scenarios",
+                    preview: "Create performance test for [system]...",
+                    full: `Create performance/load tests for [system/endpoint]:
+
+**Target:** [specific endpoints or workflows]
+**Expected load:** [requests per second]
+**Success criteria:**
+- Response time: P95 < [X]ms
+- Error rate: < [Y]%
+- Throughput: > [Z] RPS
+
+**Test scenarios:**
+1. Baseline load test
+2. Stress test (find breaking point)
+3. Spike test (sudden traffic increase)
+4. Soak test (sustained load over time)
+
+Generate:
+1. Test scripts (k6/JMeter/Gatling)
+2. Realistic user flows
+3. Think time and ramp-up logic
+4. Custom metrics collection
+5. Assertions and thresholds
+6. HTML report configuration
+7. CI integration instructions`
+                },
+                {
+                    title: "Visual Regression Tests",
+                    description: "Set up visual regression testing",
+                    preview: "Set up visual regression tests...",
+                    full: `Set up visual regression tests using [Percy/Chromatic/BackstopJS]:
+
+**Pages/components to test:**
+1. [Page/Component 1]
+2. [Page/Component 2]
+
+**Viewports:**
+- Desktop: 1920x1080
+- Tablet: 768x1024
+- Mobile: 375x667
+
+Include:
+1. Screenshot configuration
+2. Baseline image capture
+3. Comparison thresholds
+4. Viewport variations
+5. Different states (hover, active, disabled)
+6. CI integration
+7. Review workflow
+8. Ignore regions (dynamic content)
+9. Testing different themes/modes`
                 }
             ]
         },
@@ -572,6 +753,1003 @@ Make the data realistic and varied.
 Include edge cases.`
                 }
             ]
+        },
+        {
+            name: "Architecture & Design",
+            icon: "🏗️",
+            prompts: [
+                {
+                    title: "System Design Document",
+                    description: "Create a comprehensive system design",
+                    preview: "Create a system design for [system name]...",
+                    full: `Create a comprehensive system design document for: [system name]
+
+**Context:**
+[Brief description of what the system does]
+
+**Requirements:**
+1. [Key requirement 1]
+2. [Key requirement 2]
+3. [Key requirement 3]
+
+Include:
+1. Architecture diagram (describe components)
+2. Data flow diagrams
+3. Technology stack recommendations
+4. Scalability considerations
+5. Security architecture
+6. Database schema design
+7. API design
+8. Deployment strategy
+9. Monitoring and observability
+10. Cost estimates`
+                },
+                {
+                    title: "Design Pattern Implementation",
+                    description: "Implement specific design patterns",
+                    preview: "Implement the [pattern name] pattern...",
+                    full: `Implement the [pattern name] design pattern for this scenario:
+
+**Current situation:**
+[Paste existing code or describe current structure]
+
+**Goal:**
+[What you want to achieve]
+
+**Requirements:**
+1. Follow [language] idiomatic conventions
+2. Include complete working example
+3. Add comments explaining the pattern
+4. Provide unit tests
+5. Document when to use and not use this pattern
+
+Pattern options: Singleton, Factory, Strategy, Observer, Decorator, Adapter, etc.`
+                },
+                {
+                    title: "Microservices Architecture",
+                    description: "Design microservices architecture",
+                    preview: "Design microservices architecture for [system]...",
+                    full: `Design a microservices architecture for: [system description]
+
+**Current monolith structure:**
+[Describe existing system or requirements]
+
+**Business domains identified:**
+1. [Domain 1]
+2. [Domain 2]
+3. [Domain 3]
+
+Please provide:
+1. Service boundaries and responsibilities
+2. Inter-service communication patterns (sync/async)
+3. Data storage strategy (shared vs per-service databases)
+4. API Gateway design
+5. Service discovery approach
+6. Distributed transaction handling
+7. Monitoring and logging strategy
+8. Migration plan from monolith (if applicable)`
+                },
+                {
+                    title: "Database Schema Design",
+                    description: "Design optimal database schema",
+                    preview: "Design database schema for [domain]...",
+                    full: `Design an optimal database schema for: [domain/feature]
+
+**Entity descriptions:**
+[List main entities and their relationships]
+
+**Requirements:**
+- Database type: [PostgreSQL/MongoDB/etc]
+- Expected scale: [users/records count]
+- Query patterns: [describe common queries]
+
+Include:
+1. Table/collection definitions with all fields and types
+2. Primary and foreign keys
+3. Indexes (with justification)
+4. Constraints and validation rules
+5. Relationships and cardinality
+6. Migration scripts
+7. Sample queries for common operations
+8. Performance optimization notes`
+                },
+                {
+                    title: "API Design (OpenAPI)",
+                    description: "Design RESTful API with OpenAPI spec",
+                    preview: "Design RESTful API for [resource]...",
+                    full: `Design a RESTful API for: [resource/system]
+
+**Resources to expose:**
+1. [Resource 1]
+2. [Resource 2]
+
+**Requirements:**
+- Authentication: [JWT/OAuth/API Key]
+- Rate limiting: [requests per minute]
+- Versioning strategy: [URL/Header]
+
+Generate:
+1. OpenAPI 3.0 specification (YAML)
+2. Endpoint definitions (GET, POST, PUT, PATCH, DELETE)
+3. Request/response schemas
+4. Error response formats
+5. Authentication scheme
+6. Example requests and responses
+7. Pagination strategy
+8. Filtering and sorting parameters
+9. API documentation`
+                },
+                {
+                    title: "Code Architecture Review",
+                    description: "Review existing architecture and suggest improvements",
+                    preview: "Review the architecture of this codebase...",
+                    full: `Review the architecture of this codebase and suggest improvements:
+
+**Current structure:**
+[Paste directory structure or describe architecture]
+
+**Known issues:**
+[List any pain points]
+
+Analyze:
+1. Separation of concerns
+2. Coupling and cohesion
+3. Dependency management
+4. Testability
+5. Scalability bottlenecks
+6. Code organization
+7. Design pattern usage
+8. SOLID principle adherence
+
+Provide:
+- Rating (1-10) for each aspect
+- Specific refactoring recommendations
+- Priority order for improvements
+- Estimated effort for each improvement`
+                }
+            ]
+        },
+        {
+            name: "Database & Data",
+            icon: "🗄️",
+            prompts: [
+                {
+                    title: "SQL Query Optimization",
+                    description: "Optimize slow SQL queries",
+                    preview: "Optimize this SQL query...",
+                    full: `Optimize this SQL query:
+
+\`\`\`sql
+[paste your query]
+\`\`\`
+
+**Current performance:**
+- Execution time: [time]
+- Rows scanned: [number]
+
+**Database:**
+- Type: [PostgreSQL/MySQL/etc]
+- Table sizes: [provide if known]
+
+Provide:
+1. Optimized query
+2. Explanation of changes
+3. Required indexes
+4. EXPLAIN plan analysis
+5. Expected performance improvement
+6. Index creation statements
+7. Any schema changes needed`
+                },
+                {
+                    title: "Data Migration Script",
+                    description: "Create data migration scripts",
+                    preview: "Create a data migration for [change]...",
+                    full: `Create a data migration script for: [describe the change]
+
+**Current schema:**
+[Paste current table definitions]
+
+**Target schema:**
+[Paste target table definitions]
+
+**Data volume:**
+[Approximate row count]
+
+Include:
+1. Forward migration (up)
+2. Rollback migration (down)
+3. Data transformation logic
+4. Validation queries
+5. Performance considerations for large datasets
+6. Transaction handling
+7. Backup recommendations
+8. Testing strategy`
+                },
+                {
+                    title: "ORM Models & Relationships",
+                    description: "Create ORM models with relationships",
+                    preview: "Create ORM models for [entities]...",
+                    full: `Create ORM models for these entities using [Prisma/TypeORM/SQLAlchemy/Django]:
+
+**Entities:**
+1. [Entity 1]: [fields and types]
+2. [Entity 2]: [fields and types]
+
+**Relationships:**
+- [Entity A] has many [Entity B]
+- [Entity C] belongs to [Entity D]
+
+Generate:
+1. Model definitions
+2. Relationship configurations
+3. Validation rules
+4. Indexes
+5. Custom methods for common operations
+6. Migration files
+7. Seed data for testing
+8. Query examples`
+                },
+                {
+                    title: "Data Validation Schema",
+                    description: "Create data validation schemas",
+                    preview: "Create validation schema using [Zod/Joi/Yup]...",
+                    full: `Create a comprehensive validation schema using [Zod/Joi/Yup]:
+
+**Data structure:**
+[Paste TypeScript interface or describe data]
+
+**Validation rules:**
+1. [Rule 1: e.g., email must be valid]
+2. [Rule 2: e.g., age must be 18-120]
+3. [Rule 3: e.g., password min 8 chars]
+
+Include:
+- Field-level validations
+- Cross-field validations
+- Custom validation functions
+- Error messages (user-friendly)
+- Type inference (TypeScript)
+- Sanitization logic
+- Example usage in API endpoints`
+                },
+                {
+                    title: "Database Seeding",
+                    description: "Generate database seed data",
+                    preview: "Create seed data for [entities]...",
+                    full: `Create seed data for these database entities:
+
+**Entities to seed:**
+1. [Entity 1] - [number] records
+2. [Entity 2] - [number] records
+
+**Requirements:**
+- Realistic data (use faker.js or similar)
+- Maintain referential integrity
+- Include edge cases
+- Support both dev and test environments
+
+Generate:
+1. Seed script with realistic data
+2. Relationship management
+3. Idempotent seeding (can run multiple times)
+4. Separate fixtures for testing
+5. Instructions to run seeds
+6. Cleanup/reset script`
+                }
+            ]
+        },
+        {
+            name: "DevOps & Infrastructure",
+            icon: "🚀",
+            prompts: [
+                {
+                    title: "Dockerfile Creation",
+                    description: "Create optimized Dockerfile",
+                    preview: "Create a production-ready Dockerfile...",
+                    full: `Create a production-ready Dockerfile for this application:
+
+**Technology:**
+- Language/Framework: [Node.js/Python/Java/etc]
+- App type: [Web API/Frontend/Worker/etc]
+
+**Requirements:**
+1. Multi-stage build for smaller image
+2. Security best practices
+3. Non-root user
+4. Health check
+5. Proper caching for dependencies
+
+Include:
+- Optimized layer ordering
+- .dockerignore file
+- Build instructions
+- Environment variable handling
+- Comments explaining each step`
+                },
+                {
+                    title: "CI/CD Pipeline",
+                    description: "Create CI/CD pipeline configuration",
+                    preview: "Create CI/CD pipeline for [platform]...",
+                    full: `Create a CI/CD pipeline for [GitHub Actions/GitLab CI/Jenkins]:
+
+**Pipeline stages needed:**
+1. Build
+2. Test
+3. Security scan
+4. Deploy to [staging/production]
+
+**Tech stack:**
+- [Languages and frameworks]
+- [Testing frameworks]
+- [Deployment target]
+
+Generate:
+1. Complete pipeline configuration file
+2. Build steps with caching
+3. Test execution (unit, integration, e2e)
+4. Container image building and pushing
+5. Deployment steps with rollback capability
+6. Environment-specific configurations
+7. Secret management
+8. Notifications on failure
+9. Performance benchmarks`
+                },
+                {
+                    title: "Kubernetes Manifests",
+                    description: "Create Kubernetes deployment files",
+                    preview: "Create Kubernetes manifests for [app]...",
+                    full: `Create production-ready Kubernetes manifests for: [application name]
+
+**Application details:**
+- Container image: [image name]
+- Replicas: [number]
+- Resource requirements: [CPU/Memory]
+- External dependencies: [databases, caches, etc]
+
+Generate:
+1. Deployment manifest
+2. Service (ClusterIP/LoadBalancer)
+3. Ingress with TLS
+4. ConfigMap for configuration
+5. Secret for sensitive data
+6. HorizontalPodAutoscaler
+7. PersistentVolumeClaim (if needed)
+8. NetworkPolicy
+9. Resource limits and requests
+10. Liveness and readiness probes
+11. Rolling update strategy`
+                },
+                {
+                    title: "Infrastructure as Code (Terraform)",
+                    description: "Create Terraform infrastructure code",
+                    preview: "Create Terraform code for [infrastructure]...",
+                    full: `Create Terraform code for this infrastructure:
+
+**Cloud provider:** [AWS/Azure/GCP]
+
+**Infrastructure components:**
+1. [Component 1: e.g., VPC, networks]
+2. [Component 2: e.g., compute instances]
+3. [Component 3: e.g., databases]
+
+**Environment:** [dev/staging/production]
+
+Include:
+1. Resource definitions
+2. Variables and outputs
+3. Remote state configuration
+4. Modules for reusability
+5. Security best practices
+6. Tags and naming conventions
+7. Cost optimization
+8. Backup and disaster recovery
+9. Monitoring and alerting setup
+10. Documentation`
+                },
+                {
+                    title: "Monitoring & Alerting Setup",
+                    description: "Set up monitoring and alerting",
+                    preview: "Set up monitoring for [application]...",
+                    full: `Set up comprehensive monitoring and alerting for: [application]
+
+**Stack:** [Prometheus/Grafana/DataDog/New Relic]
+**Platform:** [Kubernetes/VMs/Serverless]
+
+Configure:
+1. Application metrics to track:
+   - Request rate, latency, errors
+   - Business metrics
+   - Resource usage (CPU, memory, disk)
+
+2. Infrastructure metrics
+
+3. Alerts for:
+   - Error rate threshold
+   - High latency
+   - Resource exhaustion
+   - Service downtime
+
+4. Dashboards showing:
+   - System health overview
+   - Request flow
+   - Error tracking
+   - Performance trends
+
+Include configuration files and setup instructions.`
+                },
+                {
+                    title: "Load Testing Script",
+                    description: "Create load testing scenarios",
+                    preview: "Create load test for [endpoint/system]...",
+                    full: `Create a load testing script for: [system/endpoint]
+
+**Tool:** [k6/JMeter/Artillery/Locust]
+
+**Test scenarios:**
+1. [Scenario 1: e.g., normal load - 100 RPS]
+2. [Scenario 2: e.g., peak load - 500 RPS]
+3. [Scenario 3: e.g., stress test - until failure]
+
+**Critical endpoints:**
+[List endpoints with expected response times]
+
+Generate:
+1. Test scripts with realistic user scenarios
+2. Ramp-up configuration
+3. Think time between requests
+4. Custom metrics collection
+5. Thresholds for pass/fail
+6. Report generation
+7. Instructions to run tests
+8. Analysis of results template`
+                }
+            ]
+        },
+        {
+            name: "Refactoring & Migration",
+            icon: "♻️",
+            prompts: [
+                {
+                    title: "Code Refactoring Plan",
+                    description: "Create a safe refactoring plan",
+                    preview: "Create refactoring plan for [component]...",
+                    full: `Create a comprehensive refactoring plan for: [component/module/file]
+
+**Current code:**
+[Paste existing code]
+
+**Issues with current code:**
+1. [Issue 1]
+2. [Issue 2]
+
+**Goals:**
+[What you want to achieve]
+
+Provide:
+1. Step-by-step refactoring plan
+2. Risk assessment for each step
+3. Testing strategy to ensure no regression
+4. Intermediate states (can deploy after each step)
+5. Rollback plan
+6. Estimated time per step
+7. Before/after comparison
+8. Metrics to validate improvement`
+                },
+                {
+                    title: "Legacy Code Modernization",
+                    description: "Modernize legacy code",
+                    preview: "Modernize this legacy code...",
+                    full: `Modernize this legacy code to current best practices:
+
+**Current code:**
+[Paste legacy code]
+
+**Current issues:**
+- Uses outdated patterns
+- No tests
+- Poor error handling
+- Hard to maintain
+
+**Target standards:**
+- Modern [language version]
+- SOLID principles
+- Proper error handling
+- Comprehensive tests
+- Type safety
+
+Provide:
+1. Modernized code
+2. Explanation of changes
+3. Breaking changes (if any)
+4. Migration guide
+5. Comprehensive test suite
+6. Documentation
+7. Performance comparison`
+                },
+                {
+                    title: "Framework Migration",
+                    description: "Migrate between frameworks",
+                    preview: "Migrate from [old] to [new] framework...",
+                    full: `Create a migration plan from [Old Framework] to [New Framework]:
+
+**Current application:**
+- Framework: [Old framework + version]
+- Size: [LOC or complexity measure]
+- Key features: [list main features]
+
+**Target framework:** [New framework + version]
+
+**Constraints:**
+- Zero downtime required: [yes/no]
+- Gradual migration allowed: [yes/no]
+- Timeline: [expected duration]
+
+Provide:
+1. Migration strategy (big bang vs incremental)
+2. Component mapping (old → new)
+3. Code examples for key patterns
+4. Data migration plan
+5. Routing/routing changes
+6. State management migration
+7. Testing strategy
+8. Rollback plan
+9. Training materials for team
+10. Timeline and milestones`
+                },
+                {
+                    title: "Dependency Upgrade",
+                    description: "Safely upgrade dependencies",
+                    preview: "Upgrade [package] from v[X] to v[Y]...",
+                    full: `Create an upgrade plan for [package name] from v[current] to v[target]:
+
+**Current version:** [version]
+**Target version:** [version]
+**Package manager:** [npm/yarn/pip/etc]
+
+**Application context:**
+[Brief description of how the package is used]
+
+Provide:
+1. Breaking changes analysis (from changelog)
+2. Required code changes
+3. Step-by-step upgrade instructions
+4. Test cases to verify functionality
+5. Rollback procedure
+6. Performance impact assessment
+7. Security improvements
+8. Deprecation warnings to address
+9. Alternative packages (if migration is complex)`
+                },
+                {
+                    title: "Monolith to Microservices",
+                    description: "Extract microservice from monolith",
+                    preview: "Extract [service] from monolith...",
+                    full: `Create a plan to extract [service/domain] from monolith to microservice:
+
+**Monolith context:**
+[Describe current monolith structure]
+
+**Service to extract:**
+[Domain/feature to extract]
+
+**Dependencies:**
+[List dependencies on other parts]
+
+Provide:
+1. Service boundary definition
+2. Data extraction strategy
+3. API contract for new service
+4. Strangler pattern implementation
+5. Dual-write strategy (if needed)
+6. Testing approach
+7. Deployment strategy
+8. Monitoring and observability
+9. Rollback plan
+10. Timeline with phases`
+                }
+            ]
+        },
+        {
+            name: "Project Setup & Scaffolding",
+            icon: "📦",
+            prompts: [
+                {
+                    title: "Project Initialization",
+                    description: "Initialize new project with best practices",
+                    preview: "Initialize a new [type] project...",
+                    full: `Initialize a new [project type] project with production-ready setup:
+
+**Project details:**
+- Name: [project name]
+- Type: [Web API/SPA/Mobile/CLI/etc]
+- Tech stack: [languages and frameworks]
+
+**Requirements:**
+- TypeScript/type safety
+- Testing framework
+- Linting and formatting
+- Git hooks (pre-commit)
+- CI/CD ready
+- Docker support
+
+Generate:
+1. Project structure and folders
+2. Package.json / requirements.txt / etc
+3. Config files (tsconfig, eslint, prettier)
+4. .gitignore
+5. README with setup instructions
+6. Environment variable template
+7. Docker and docker-compose files
+8. GitHub Actions / CI configuration
+9. Testing setup with example test
+10. Development scripts (dev, build, test, lint)`
+                },
+                {
+                    title: "README Generator",
+                    description: "Create comprehensive README",
+                    preview: "Create a README for this project...",
+                    full: `Create a comprehensive README.md for this project:
+
+**Project name:** [name]
+**Description:** [what it does]
+**Tech stack:** [technologies used]
+
+Include:
+1. Project title and description
+2. Badges (build status, coverage, version)
+3. Table of contents
+4. Features list
+5. Prerequisites
+6. Installation instructions
+7. Configuration guide
+8. Usage examples with code
+9. API documentation (if applicable)
+10. Project structure overview
+11. Testing instructions
+12. Deployment guide
+13. Contributing guidelines
+14. License
+15. Contact/support information
+
+Make it beginner-friendly yet comprehensive.`
+                },
+                {
+                    title: "Contributing Guidelines",
+                    description: "Create CONTRIBUTING.md file",
+                    preview: "Create contribution guidelines...",
+                    full: `Create a CONTRIBUTING.md file for this project:
+
+**Project:** [name]
+**Tech stack:** [stack]
+**Workflow:** [Git flow/trunk-based/etc]
+
+Include:
+1. Welcome message
+2. Code of conduct reference
+3. How to set up development environment
+4. Coding standards and style guide
+5. Commit message conventions
+6. Branch naming conventions
+7. Pull request process
+8. Testing requirements
+9. Documentation requirements
+10. Issue reporting guidelines
+11. Communication channels
+12. Recognition for contributors`
+                },
+                {
+                    title: "Environment Configuration",
+                    description: "Set up environment variables and config",
+                    preview: "Set up environment configuration...",
+                    full: `Set up environment configuration for this application:
+
+**Environments:** [dev, staging, production]
+**Tech stack:** [framework]
+
+**Configuration needed:**
+- Database connections
+- API keys and secrets
+- Feature flags
+- Third-party service URLs
+- Logging levels
+
+Create:
+1. .env.example with all variables documented
+2. .env.development
+3. .env.production (template)
+4. Config loading module/class
+5. Validation for required variables
+6. Type-safe config (TypeScript interfaces)
+7. Documentation for each variable
+8. Secret management recommendations
+9. Local override strategy (.env.local)`
+                },
+                {
+                    title: "Project Documentation",
+                    description: "Create comprehensive project docs",
+                    preview: "Create documentation structure...",
+                    full: `Create a documentation structure for this project:
+
+**Project:** [name and description]
+**Audience:** [developers/users/both]
+
+Create these documentation files:
+
+1. **/docs/architecture.md**
+   - System architecture diagram
+   - Component interactions
+   - Data flow
+   - Technology decisions
+
+2. **/docs/api.md** (if API project)
+   - Endpoints documentation
+   - Request/response examples
+   - Authentication
+   - Rate limiting
+
+3. **/docs/development.md**
+   - Local setup
+   - Development workflow
+   - Debugging tips
+   - Common issues
+
+4. **/docs/deployment.md**
+   - Deployment process
+   - Environment setup
+   - Rollback procedure
+   - Monitoring
+
+5. **/docs/testing.md**
+   - Testing strategy
+   - How to run tests
+   - Writing new tests
+   - Coverage requirements
+
+Include table of contents and navigation links.`
+                },
+                {
+                    title: "Code Style Configuration",
+                    description: "Set up linting and formatting",
+                    preview: "Configure code style tools...",
+                    full: `Set up code style and quality tools for [language/framework]:
+
+**Project type:** [Node.js/Python/Java/etc]
+**Style preference:** [Standard/Airbnb/Google/etc]
+
+Configure:
+1. Linter configuration (ESLint/Pylint/etc)
+2. Formatter (Prettier/Black/etc)
+3. Type checker settings (if applicable)
+4. Git hooks (Husky + lint-staged)
+5. Editor config (.editorconfig)
+6. Import sorting
+7. Spell checker for comments
+8. .prettierignore / .eslintignore
+
+Generate:
+- All config files
+- package.json scripts
+- Pre-commit hook setup
+- CI integration for checks
+- Documentation for team`
+                }
+            ]
+        },
+        {
+            name: "Structured Autonomy",
+            icon: "🎯",
+            prompts: [
+                {
+                    title: "SA Plan - Project Planning",
+                    description: "Research-driven planning agent that breaks down feature requests into testable implementation steps",
+                    preview: "Create a structured plan for implementing [feature]...",
+                    full: `You are a Project Planning Agent that collaborates with users to design development plans.
+
+A development plan defines a clear path to implement the user's request. During this step you will **not write any code**. Instead, you will research, analyze, and outline a plan.
+
+Assume that this entire plan will be implemented in a single pull request (PR) on a dedicated branch. Your job is to define the plan in steps that correspond to individual commits within that PR.
+
+## Step 1: Research and Gather Context
+
+Research the user's feature request comprehensively:
+
+1. **Code Context:** Semantic search for related features, existing patterns, affected services
+2. **Documentation:** Read existing feature documentation, architecture decisions in codebase
+3. **Dependencies:** Research any external APIs, libraries needed. ALWAYS READ THE DOCUMENTATION FIRST.
+4. **Patterns:** Identify how similar features are implemented
+
+Use official documentation and reputable sources. If uncertain about patterns, research before proposing.
+
+Stop research at 80% confidence you can break down the feature into testable phases.
+
+## Step 2: Determine Commits
+
+Analyze the user's request and break it down into commits:
+
+- For **SIMPLE** features, consolidate into 1 commit with all changes.
+- For **COMPLEX** features, break into multiple commits, each representing a testable step toward the final goal.
+
+## Step 3: Plan Generation
+
+1. Generate draft plan with \`[NEEDS CLARIFICATION]\` markers where the user's input is needed.
+2. Save the plan to "plans/{feature-name}/plan.md"
+3. Ask clarifying questions for any \`[NEEDS CLARIFICATION]\` sections
+4. MANDATORY: Pause for feedback
+5. If feedback received, revise plan and go back to Step 1 for any research needed
+
+## Output Template:
+
+**File:** \`plans/{feature-name}/plan.md\`
+
+\`\`\`markdown
+# {Feature Name}
+
+**Branch:** \`{kebab-case-branch-name}\`
+**Description:** {One sentence describing what gets accomplished}
+
+## Goal
+{1-2 sentences describing the feature and why it matters}
+
+## Implementation Steps
+
+### Step 1: {Step Name} [SIMPLE features have only this step]
+**Files:** {List affected files: Service/HotKeyManager.cs, Models/PresetSize.cs, etc.}
+**What:** {1-2 sentences describing the change}
+**Testing:** {How to verify this step works}
+
+### Step 2: {Step Name} [COMPLEX features continue]
+**Files:** {affected files}
+**What:** {description}
+**Testing:** {verification method}
+\`\`\``
+                },
+                {
+                    title: "SA Generate - Implementation Generator",
+                    description: "Converts structured plans into copy-paste ready code with complete verification checklists",
+                    preview: "Generate implementation from plan for [feature]...",
+                    full: `You are a PR implementation plan generator that creates complete, copy-paste ready implementation documentation.
+
+Your SOLE responsibility is to:
+1. Accept a complete PR plan (plan.md in plans/{feature-name}/)
+2. Extract all implementation steps from the plan
+3. Generate comprehensive step documentation with complete code
+4. Save plan to: \`plans/{feature-name}/implementation.md\`
+
+## Step 1: Parse Plan & Research Codebase
+
+1. Read the plan.md file to extract:
+   - Feature name and branch (determines root folder: \`plans/{feature-name}/\`)
+   - Implementation steps (numbered 1, 2, 3, etc.)
+   - Files affected by each step
+2. Run comprehensive research ONE TIME. Do NOT pause.
+3. Once research returns, proceed to Step 2 (file generation).
+
+## Research Task:
+
+For the entire project described in the master plan, research and gather:
+
+1. **Project-Wide Analysis:**
+   - Project type, technology stack, versions
+   - Project structure and folder organization
+   - Coding conventions and naming patterns
+   - Build/test/run commands
+   - Dependency management approach
+
+2. **Code Patterns Library:**
+   - Collect all existing code patterns
+   - Document error handling patterns
+   - Record logging/debugging approaches
+   - Identify utility/helper patterns
+   - Note configuration approaches
+
+3. **Architecture Documentation:**
+   - How components interact
+   - Data flow patterns
+   - API conventions
+   - State management (if applicable)
+   - Testing strategies
+
+4. **Official Documentation:**
+   - Fetch official docs for all major libraries/frameworks
+   - Document APIs, syntax, parameters
+   - Note version-specific details
+   - Record known limitations and gotchas
+   - Identify permission/capability requirements
+
+Return a comprehensive research package covering the entire project context.
+
+## Step 2: Generate Implementation File
+
+Output the plan as a COMPLETE markdown document, ready to be saved as a \`.md\` file.
+
+The plan MUST include:
+- Complete, copy-paste ready code blocks with ZERO modifications needed
+- Exact file paths appropriate to the project structure
+- Markdown checkboxes for EVERY action item
+- Specific, observable, testable verification points
+- NO ambiguity - every instruction is concrete
+- NO "decide for yourself" moments - all decisions made based on research
+- Technology stack and dependencies explicitly stated
+- Build/test commands specific to the project type
+
+## Output Template:
+
+\`\`\`markdown
+# {FEATURE_NAME}
+
+## Goal
+{One sentence describing exactly what this implementation accomplishes}
+
+## Prerequisites
+Make sure that the user is currently on the \`{feature-name}\` branch before beginning implementation.
+If not, move them to the correct branch. If the branch does not exist, create it from main.
+
+### Step-by-Step Instructions
+
+#### Step 1: {Action}
+- [ ] {Specific instruction 1}
+- [ ] Copy and paste code below into \`{file}\`:
+
+\\\`\\\`\\\`{language}
+{COMPLETE, TESTED CODE - NO PLACEHOLDERS - NO "TODO" COMMENTS}
+\\\`\\\`\\\`
+
+- [ ] {Specific instruction 2}
+
+##### Step 1 Verification Checklist
+- [ ] No build errors
+- [ ] Specific instructions for UI verification (if applicable)
+
+#### Step 1 STOP & COMMIT
+**STOP & COMMIT:** Agent must stop here and wait for the user to test, stage, and commit the change.
+
+#### Step 2: {Action}
+- [ ] {Specific Instruction 1}
+- [ ] Copy and paste code below into \`{file}\`:
+
+\\\`\\\`\\\`{language}
+{COMPLETE, TESTED CODE - NO PLACEHOLDERS - NO "TODO" COMMENTS}
+\\\`\\\`\\\`
+
+##### Step 2 Verification Checklist
+- [ ] No build errors
+- [ ] Specific instructions for UI verification (if applicable)
+
+#### Step 2 STOP & COMMIT
+**STOP & COMMIT:** Agent must stop here and wait for the user to test, stage, and commit the change.
+\`\`\``
+                },
+                {
+                    title: "SA Implement - Step Executor",
+                    description: "Implementation agent that executes step-by-step instructions with validation",
+                    preview: "Execute implementation plan for [feature]...",
+                    full: `You are an implementation agent responsible for carrying out the implementation plan without deviating from it.
+
+Only make the changes explicitly specified in the plan. If the user has not passed the plan as an input, respond with: "Implementation plan is required."
+
+## Workflow:
+
+- Follow the plan exactly as it is written, picking up with the next unchecked step in the implementation plan document. You MUST NOT skip any steps.
+- Implement ONLY what is specified in the implementation plan. DO NOT WRITE ANY CODE OUTSIDE OF WHAT IS SPECIFIED IN THE PLAN.
+- Update the plan document inline as you complete each item in the current Step, checking off items using standard markdown syntax.
+- Complete every item in the current Step.
+- Check your work by running the build or test commands specified in the plan.
+- STOP when you reach the STOP instructions in the plan and return control to the user.
+
+## Important Rules:
+
+1. **No Deviation:** Only implement what's in the plan
+2. **Check Off Items:** Mark completed items with [x]
+3. **Verify Each Step:** Run tests/builds as specified
+4. **Stop at Checkpoints:** Wait for user verification at STOP points
+5. **No Skipping:** Complete every checkbox in order
+
+If you encounter an error:
+1. Report the error clearly
+2. Do NOT continue to next steps
+3. Wait for user guidance on how to proceed`
+                }
+            ]
         }
     ]
 };
@@ -720,6 +1898,12 @@ const RESOURCES_DATA = {
                     url: "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
                     description: "6,500+ system prompts from mainstream AI tools. Learn how major companies structure prompts.",
                     tags: ["System Prompts", "Production", "Research"]
+                },
+                {
+                    title: "Structured Autonomy Collection",
+                    url: "https://github.com/github/awesome-copilot/blob/main/collections/structured-autonomy.md",
+                    description: "Three-phase workflow for autonomous project planning and implementation with GitHub Copilot. Includes Plan, Generate, and Implement prompts for structured development.",
+                    tags: ["GitHub Copilot", "Autonomous", "Workflow", "Planning"]
                 }
             ]
         },
@@ -2092,6 +3276,88 @@ For each finding:
         { concept: "Agents", analogy: "General contractor", size: "N/A (it's a mode)", activation: "User-initiated", bestFor: "Complex goals" },
         { concept: "Subagents", analogy: "Specialist (electrician)", size: "50-200 lines", activation: "Agent-delegated", bestFor: "Expert subtasks" },
         { concept: "OpenCode", analogy: "Swiss army knife", size: "Config file", activation: "CLI/TUI launch", bestFor: "Multi-provider, terminal" }
+    ]
+};
+
+const SKILLS_LIBRARY_DATA = {
+    categories: [
+        {
+            name: "Architecture",
+            icon: "📐",
+            skills: [
+                { id: "design-api", name: "Design API", description: "Design clean, RESTful APIs", short: "RESTful API design" },
+                { id: "design-database", name: "Design Database", description: "Design efficient database schemas", short: "Database schema design" },
+                { id: "design-patterns", name: "Design Patterns", description: "Apply appropriate design patterns", short: "Software patterns" },
+                { id: "system-design", name: "System Design", description: "Design scalable distributed systems", short: "Distributed systems" }
+            ]
+        },
+        {
+            name: "Code Review",
+            icon: "🔍",
+            skills: [
+                { id: "code-review-best-practices", name: "Best Practices", description: "Comprehensive code review", short: "Quality review" },
+                { id: "code-review-performance", name: "Performance", description: "Performance bottleneck analysis", short: "Speed optimization" },
+                { id: "code-review-refactor", name: "Refactor", description: "Code refactoring recommendations", short: "Code improvement" },
+                { id: "code-review-security", name: "Security", description: "Security vulnerability analysis", short: "Security audit" }
+            ]
+        },
+        {
+            name: "Debugging",
+            icon: "🐛",
+            skills: [
+                { id: "debug-error", name: "Debug Error", description: "Systematic error diagnosis", short: "Bug fixing" },
+                { id: "debug-performance-profile", name: "Performance Profile", description: "Performance bottleneck profiling", short: "CPU/memory profiling" },
+                { id: "debug-trace-issue", name: "Trace Issue", description: "Complex issue tracing", short: "Flow tracing" }
+            ]
+        },
+        {
+            name: "Documentation",
+            icon: "📚",
+            skills: [
+                { id: "docs-api-docs", name: "API Docs", description: "Generate API documentation", short: "API reference" },
+                { id: "docs-changelog", name: "Changelog", description: "Generate maintainable changelogs", short: "Release notes" },
+                { id: "docs-contributing", name: "Contributing", description: "Create contributing guidelines", short: "Contribution guide" },
+                { id: "docs-readme", name: "README", description: "Generate project README", short: "Project docs" }
+            ]
+        },
+        {
+            name: "Learning",
+            icon: "📖",
+            skills: [
+                { id: "learning-compare-tech", name: "Compare Tech", description: "Compare technical solutions", short: "Tech comparison" },
+                { id: "learning-eli5", name: "Explain Like I'm 5", description: "Simple concept explanations", short: "Simple explanations" },
+                { id: "learning-explain-concept", name: "Explain Concept", description: "Detailed technical explanations", short: "Deep dives" },
+                { id: "learning-roadmap", name: "Roadmap", description: "Structured learning plans", short: "Learning paths" }
+            ]
+        },
+        {
+            name: "Prompts",
+            icon: "💬",
+            skills: [
+                { id: "prompts-best-practices", name: "Best Practices", description: "Prompt engineering principles", short: "Prompt tips" },
+                { id: "prompts-create-template", name: "Create Template", description: "Create reusable prompt templates", short: "Template creation" },
+                { id: "prompts-improve", name: "Improve", description: "Improve existing prompts", short: "Prompt tuning" }
+            ]
+        },
+        {
+            name: "Testing",
+            icon: "🧪",
+            skills: [
+                { id: "testing-coverage-analysis", name: "Coverage Analysis", description: "Test coverage analysis", short: "Coverage review" },
+                { id: "testing-edge-cases", name: "Edge Cases", description: "Edge case identification", short: "Boundary testing" },
+                { id: "testing-generate-e2e-tests", name: "Generate E2E Tests", description: "End-to-end test creation", short: "Integration tests" },
+                { id: "testing-generate-unit-tests", name: "Generate Unit Tests", description: "Unit test generation", short: "Unit tests" }
+            ]
+        },
+        {
+            name: "Writing",
+            icon: "✍️",
+            skills: [
+                { id: "writing-email", name: "Email", description: "Professional email composition", short: "Email writing" },
+                { id: "writing-presentation", name: "Presentation", description: "Presentation content creation", short: "Slide creation" },
+                { id: "writing-technical-blog", name: "Technical Blog", description: "Technical blog post writing", short: "Blog posts" }
+            ]
+        }
     ]
 };
 

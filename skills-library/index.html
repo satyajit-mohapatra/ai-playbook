@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code Skills Library</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h1>Skills Library</h1>
+            <p class="subtitle">Claude Code Skills</p>
+        </div>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search skills...">
+        </div>
+        <ul class="nav-menu" id="navMenu">
+            <li class="nav-section">
+                <span class="section-icon">📐</span>
+                Architecture
+            </li>
+            <li class="nav-item" data-skill="design-api">
+                <span class="skill-icon">🔗</span>
+                Design API
+            </li>
+            <li class="nav-item" data-skill="design-database">
+                <span class="skill-icon">🗄️</span>
+                Design Database
+            </li>
+            <li class="nav-item" data-skill="design-patterns">
+                <span class="skill-icon">📐</span>
+                Design Patterns
+            </li>
+            <li class="nav-item" data-skill="system-design">
+                <span class="skill-icon">🏗️</span>
+                System Design
+            </li>
+
+            <li class="nav-section">
+                <span class="section-icon">🔍</span>
+                Code Review
+            </li>
+            <li class="nav-item" data-skill="code-review-best-practices">
+                <span class="skill-icon">✓</span>
+                Best Practices
+            </li>
+            <li class="nav-item" data-skill="code-review-performance">
+                <span class="skill-icon">⚡</span>
+                Performance
+            </li>
+            <li class="nav-item" data-skill="code-review-refactor">
+                <span class="skill-icon">♻️</span>
+                Refactor
+            </li>
+            <li class="nav-item" data-skill="code-review-security">
+                <span class="skill-icon">🔒</span>
+                Security
+            </li>
+
+            <li class="nav-section">
+                <span class="section-icon">🐛</span>
+                Debugging
+            </li>
+            <li class="nav-item" data-skill="debug-error">
+                <span class="skill-icon">❌</span>
+                Debug Error
+            </li>
+            <li class="nav-item" data-skill="debug-performance-profile">
+                <span class="skill-icon">📊</span>
+                Performance Profile
+            </li>
+            <li class="nav-item" data-skill="debug-trace-issue">
+                <span class="skill-icon">🔍</span>
+                Trace Issue
+            </li>
+
+            <li class="nav-section">
+                <span class="section-icon">📚</span>
+                Documentation
+            </li>
+            <li class="nav-item" data-skill="docs-api-docs">
+                <span class="skill-icon">📖</span>
+                API Docs
+            </li>
+            <li class="nav-item" data-skill="docs-changelog">
+                <span class="skill-icon">📋</span>
+                Changelog
+            </li>
+            <li class="nav-item" data-skill="docs-contributing">
+                <span class="skill-icon">🤝</span>
+                Contributing
+            </li>
+            <li class="nav-item" data-skill="docs-readme">
+                <span class="skill-icon">📄</span>
+                README
+            </li>
+
+            <li class="nav-section">
+                <span class="section-icon">📖</span>
+                Learning
+            </li>
+            <li class="nav-item" data-skill="learning-compare-tech">
+                <span class="skill-icon">⚖️</span>
+                Compare Tech
+            </li>
+            <li class="nav-item" data-skill="learning-eli5">
+                <span class="skill-icon">👶</span>
+                Explain Like I'm 5
+            </li>
+            <li class="nav-item" data-skill="learning-explain-concept">
+                <span class="skill-icon">💡</span>
+                Explain Concept
+            </li>
+            <li class="nav-item" data-skill="learning-roadmap">
+                <span class="skill-icon">🗺️</span>
+                Roadmap
+            </li>
+
+            <li class="nav-section">
+                <span class="section-icon">💬</span>
+                Prompts
+            </li>
+            <li class="nav-item" data-skill="prompts-best-practices">
+                <span class="skill-icon">✨</span>
+                Best Practices
+            </li>
+            <li class="nav-item" data-skill="prompts-create-template">
+                <span class="skill-icon">📝</span>
+                Create Template
+            </li>
+            <li class="nav-item" data-skill="prompts-improve">
+                <span class="skill-icon">🚀</span>
+                Improve
+            </li>
+
+            <li class="nav-section">
+                <span class="section-icon">🧪</span>
+                Testing
+            </li>
+            <li class="nav-item" data-skill="testing-coverage-analysis">
+                <span class="skill-icon">📈</span>
+                Coverage Analysis
+            </li>
+            <li class="nav-item" data-skill="testing-edge-cases">
+                <span class="skill-icon">⚠️</span>
+                Edge Cases
+            </li>
+            <li class="nav-item" data-skill="testing-generate-e2e-tests">
+                <span class="skill-icon">🔄</span>
+                Generate E2E Tests
+            </li>
+            <li class="nav-item" data-skill="testing-generate-unit-tests">
+                <span class="skill-icon">🧩</span>
+                Generate Unit Tests
+            </li>
+
+            <li class="nav-section">
+                <span class="section-icon">✍️</span>
+                Writing
+            </li>
+            <li class="nav-item" data-skill="writing-email">
+                <span class="skill-icon">📧</span>
+                Email
+            </li>
+            <li class="nav-item" data-skill="writing-presentation">
+                <span class="skill-icon">📊</span>
+                Presentation
+            </li>
+            <li class="nav-item" data-skill="writing-technical-blog">
+                <span class="skill-icon">📝</span>
+                Technical Blog
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <p>Based on Agent Skills Spec</p>
+            <a href="https://agentskills.io/specification" target="_blank">View Specification</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="content-header">
+            <h2 id="skillTitle">Select a Skill</h2>
+            <p id="skillDescription" class="description">Choose a skill from the sidebar to view its details and copy the SKILL.md content.</p>
+        </div>
+        <div class="skill-content" id="skillContent">
+            <div class="welcome-screen">
+                <h3>Welcome to Claude Code Skills Library</h3>
+                <p>This library contains 28 reusable skills formatted according to the <a href="https://agentskills.io/specification" target="_blank">Agent Skills Specification</a>.</p>
+                <p>Click on any skill in the sidebar to:</p>
+                <ul>
+                    <li>View skill details and description</li>
+                    <li>See the complete SKILL.md content</li>
+                    <li>Copy the YAML frontmatter and Markdown body</li>
+                </ul>
+                <h4>Categories</h4>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <span class="cat-icon">📐</span>
+                        <span>Architecture (4)</span>
+                    </div>
+                    <div class="category-card">
+                        <span class="cat-icon">🔍</span>
+                        <span>Code Review (4)</span>
+                    </div>
+                    <div class="category-card">
+                        <span class="cat-icon">🐛</span>
+                        <span>Debugging (3)</span>
+                    </div>
+                    <div class="category-card">
+                        <span class="cat-icon">📚</span>
+                        <span>Documentation (4)</span>
+                    </div>
+                    <div class="category-card">
+                        <span class="cat-icon">📖</span>
+                        <span>Learning (4)</span>
+                    </div>
+                    <div class="category-card">
+                        <span class="cat-icon">💬</span>
+                        <span>Prompts (3)</span>
+                    </div>
+                    <div class="category-card">
+                        <span class="cat-icon">🧪</span>
+                        <span>Testing (4)</span>
+                    </div>
+                    <div class="category-card">
+                        <span class="cat-icon">✍️</span>
+                        <span>Writing (3)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="action-bar" id="actionBar" style="display: none;">
+            <button class="btn btn-copy" id="copyBtn">
+                <span class="btn-icon">📋</span>
+                Copy SKILL.md
+            </button>
+            <button class="btn btn-copy-frontmatter" id="copyFrontmatterBtn">
+                <span class="btn-icon">📄</span>
+                Copy Frontmatter Only
+            </button>
+            <button class="btn btn-copy-body" id="copyBodyBtn">
+                <span class="btn-icon">📝</span>
+                Copy Body Only
+            </button>
+            <span class="copy-feedback" id="copyFeedback"></span>
+        </div>
+    </main>
+
+    <script src="skills-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

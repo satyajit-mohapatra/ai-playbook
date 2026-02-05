@@ -1,0 +1,76 @@
+{
+  "$schema": "https://agentskills.io/schemas/skill-index.json",
+  "name": "Claude Code Skills Library",
+  "description": "Reusable AI skills converted from Gemini CLI Prompt Library, formatted according to Agent Skills specification",
+  "skills": [
+    {
+      "category": "Architecture",
+      "skills": [
+        {"name": "design-api", "path": "design-api/", "description": "Design clean, RESTful APIs"},
+        {"name": "design-database", "path": "design-database/", "description": "Design efficient database schemas"},
+        {"name": "design-patterns", "path": "design-patterns/", "description": "Apply appropriate design patterns"},
+        {"name": "system-design", "path": "system-design/", "description": "Design scalable distributed systems"}
+      ]
+    },
+    {
+      "category": "Code Review",
+      "skills": [
+        {"name": "code-review-best-practices", "path": "code-review-best-practices/", "description": "Comprehensive code review"},
+        {"name": "code-review-performance", "path": "code-review-performance/", "description": "Performance bottleneck analysis"},
+        {"name": "code-review-refactor", "path": "code-review-refactor/", "description": "Code refactoring recommendations"},
+        {"name": "code-review-security", "path": "code-review-security/", "description": "Security vulnerability analysis"}
+      ]
+    },
+    {
+      "category": "Debugging",
+      "skills": [
+        {"name": "debug-error", "path": "debug-error/", "description": "Systematic error diagnosis"},
+        {"name": "debug-performance-profile", "path": "debug-performance-profile/", "description": "Performance bottleneck profiling"},
+        {"name": "debug-trace-issue", "path": "debug-trace-issue/", "description": "Complex issue tracing"}
+      ]
+    },
+    {
+      "category": "Documentation",
+      "skills": [
+        {"name": "docs-api-docs", "path": "docs-api-docs/", "description": "Generate API documentation"},
+        {"name": "docs-changelog", "path": "docs-changelog/", "description": "Generate maintainable changelogs"},
+        {"name": "docs-contributing", "path": "docs-contributing/", "description": "Create contributing guidelines"},
+        {"name": "docs-readme", "path": "docs-readme/", "description": "Generate project README"}
+      ]
+    },
+    {
+      "category": "Learning",
+      "skills": [
+        {"name": "learning-compare-tech", "path": "learning-compare-tech/", "description": "Compare technical solutions"},
+        {"name": "learning-eli5", "path": "learning-eli5/", "description": "Simple concept explanations"},
+        {"name": "learning-explain-concept", "path": "learning-explain-concept/", "description": "Detailed technical explanations"},
+        {"name": "learning-roadmap", "path": "learning-roadmap/", "description": "Structured learning plans"}
+      ]
+    },
+    {
+      "category": "Prompts",
+      "skills": [
+        {"name": "prompts-best-practices", "path": "prompts-best-practices/", "description": "Prompt engineering principles"},
+        {"name": "prompts-create-template", "path": "prompts-create-template/", "description": "Create reusable prompt templates"},
+        {"name": "prompts-improve", "path": "prompts-improve/", "description": "Improve existing prompts"}
+      ]
+    },
+    {
+      "category": "Testing",
+      "skills": [
+        {"name": "testing-coverage-analysis", "path": "testing-coverage-analysis/", "description": "Test coverage analysis"},
+        {"name": "testing-edge-cases", "path": "testing-edge-cases/", "description": "Edge case identification"},
+        {"name": "testing-generate-e2e-tests", "path": "testing-generate-e2e-tests/", "description": "End-to-end test creation"},
+        {"name": "testing-generate-unit-tests", "path": "testing-generate-unit-tests/", "description": "Unit test generation"}
+      ]
+    },
+    {
+      "category": "Writing",
+      "skills": [
+        {"name": "writing-email", "path": "writing-email/", "description": "Professional email composition"},
+        {"name": "writing-presentation", "path": "writing-presentation/", "description": "Presentation content creation"},
+        {"name": "writing-technical-blog", "path": "writing-technical-blog/", "description": "Technical blog post writing"}
+      ]
+    }
+  ]
+}

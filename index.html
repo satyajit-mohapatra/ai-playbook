@@ -22,35 +22,279 @@
                     <span class="logo-text">AI Playbook</span>
                 </div>
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-menu tree-nav">
+                <!-- Dashboard -->
                 <li class="nav-item active" data-section="dashboard">
                     <span class="nav-icon">📊</span>
                     <span>Dashboard</span>
                 </li>
-                <li class="nav-item" data-section="journey">
+                
+                <!-- 90-Day Journey -->
+                <li class="nav-item has-submenu" data-submenu="journey-menu">
                     <span class="nav-icon">🎯</span>
                     <span>90-Day Journey</span>
+                    <span class="submenu-toggle">▶</span>
                 </li>
+                <ul class="submenu" id="submenu-journey-menu">
+                    <li class="nav-subitem" data-section="journey" data-phase="foundation">
+                        <span class="subitem-icon">🌱</span> Phase 1: Foundation
+                    </li>
+                    <li class="nav-subitem" data-section="journey" data-phase="acceleration">
+                        <span class="subitem-icon">🚀</span> Phase 2: Acceleration
+                    </li>
+                    <li class="nav-subitem" data-section="journey" data-phase="mastery">
+                        <span class="subitem-icon">🎯</span> Phase 3: Mastery
+                    </li>
+                </ul>
+                
+                <!-- Prompt Library -->
                 <li class="nav-item" data-section="prompts">
                     <span class="nav-icon">💬</span>
                     <span>Prompt Library</span>
                 </li>
+                
+                <!-- Resources -->
                 <li class="nav-item" data-section="resources">
                     <span class="nav-icon">📚</span>
                     <span>Resources</span>
                 </li>
-                <li class="nav-item" data-section="ai-tools-guide">
+                
+                <!-- AI Tools Guide -->
+                <li class="nav-item has-submenu" data-submenu="tools-menu">
                     <span class="nav-icon">🔌</span>
                     <span>AI Tools Guide</span>
+                    <span class="submenu-toggle">▶</span>
                 </li>
+                <ul class="submenu" id="submenu-tools-menu">
+                    <li class="nav-subitem" data-section="ai-tools-guide">
+                        <span class="subitem-icon">🤖</span> Agents Overview
+                    </li>
+                    <li class="nav-subitem" data-section="ai-tools-guide">
+                        <span class="subitem-icon">⚡</span> Skills & Prompts
+                    </li>
+                    <li class="nav-subitem" data-section="ai-tools-guide">
+                        <span class="subitem-icon">🌐</span> MCP Servers
+                    </li>
+                    <li class="nav-subitem" data-section="ai-tools-guide">
+                        <span class="subitem-icon">🔧</span> Subagents
+                    </li>
+                </ul>
+                
+                <!-- Concepts Comparison -->
                 <li class="nav-item" data-section="concepts-comparison">
                     <span class="nav-icon">⚖️</span>
                     <span>Concepts Comparison</span>
                 </li>
+                
+                <!-- Context Engineering -->
                 <li class="nav-item" data-section="context-engineering">
                     <span class="nav-icon">🧠</span>
                     <span>Context Engineering</span>
                 </li>
+                
+                <!-- Skills Library -->
+                <li class="nav-item" data-section="skills-library">
+                    <span class="nav-icon">📦</span>
+                    <span>Skills Library</span>
+                </li>
+                
+                <!-- OpenCode Documentation -->
+                <li class="nav-item has-submenu" data-submenu="opencode-menu">
+                    <span class="nav-icon">🤖</span>
+                    <span>OpenCode</span>
+                    <span class="submenu-toggle">▶</span>
+                </li>
+                <ul class="submenu" id="submenu-opencode-menu">
+                    <li class="nav-subitem" data-section="opencode" data-opencode-page="intro">
+                        <span class="subitem-icon">📄</span> Introduction
+                    </li>
+                    
+                    <li class="nav-subitem has-nested" data-nested="getting-started">
+                        <span class="subitem-icon">🚀</span> Getting Started
+                        <span class="nested-toggle">▶</span>
+                    </li>
+                    <ul class="nested-menu" id="nested-getting-started">
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="prerequisites">Prerequisites</li>
+                        <li class="nav-nesteditem has-nested2" data-nested2="installation">
+                            <span>Installation</span>
+                            <span class="nested2-toggle">▶</span>
+                        </li>
+                        <ul class="nested2-menu" id="nested2-installation">
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="install-quick">Quick Install</li>
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="install-homebrew">Homebrew</li>
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="install-npm">npm/Bun/pnpm</li>
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="install-windows">Windows</li>
+                        </ul>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="first-run">First Run & Setup</li>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="init">Project Initialization</li>
+                    </ul>
+                    
+                    <li class="nav-subitem has-nested" data-nested="configuration">
+                        <span class="subitem-icon">⚙️</span> Configuration
+                        <span class="nested-toggle">▶</span>
+                    </li>
+                    <ul class="nested-menu" id="nested-configuration">
+                        <li class="nav-nesteditem has-nested2" data-nested2="opencode-json">
+                            <span>opencode.json</span>
+                            <span class="nested2-toggle">▶</span>
+                        </li>
+                        <ul class="nested2-menu" id="nested2-opencode-json">
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="config-schema">Schema & Structure</li>
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="config-precedence">Config Locations</li>
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="config-themes">Themes</li>
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="config-autoupdate">Auto-update</li>
+                        </ul>
+                        <li class="nav-nesteditem has-nested2" data-nested2="permissions">
+                            <span>Permissions</span>
+                            <span class="nested2-toggle">▶</span>
+                        </li>
+                        <ul class="nested2-menu" id="nested2-permissions">
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="perm-edit">Edit Permissions</li>
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="perm-bash">Bash Permissions</li>
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="perm-per-cmd">Per-Command</li>
+                        </ul>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="formatters">Formatters</li>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="custom-instructions">Custom Instructions</li>
+                    </ul>
+                    
+                    <li class="nav-subitem has-nested" data-nested="core-concepts">
+                        <span class="subitem-icon">💡</span> Core Concepts
+                        <span class="nested-toggle">▶</span>
+                    </li>
+                    <ul class="nested-menu" id="nested-core-concepts">
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="modes">Build & Plan Modes</li>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="file-refs">File References (@)</li>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="images">Images & Visual Context</li>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="codebase">Codebase Understanding</li>
+                    </ul>
+                    
+                    <li class="nav-subitem has-nested" data-nested="workflows">
+                        <span class="subitem-icon">⚡</span> Daily Workflows
+                        <span class="nested-toggle">▶</span>
+                    </li>
+                    <ul class="nested-menu" id="nested-workflows">
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="asking-questions">Asking Questions</li>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="making-changes">Making Changes</li>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="undo-redo">Undo & Redo</li>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="sharing">Sharing Conversations</li>
+                        <li class="nav-nesteditem has-nested2" data-nested2="sessions">
+                            <span>Session Management</span>
+                            <span class="nested2-toggle">▶</span>
+                        </li>
+                        <ul class="nested2-menu" id="nested2-sessions">
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="sessions-resume">Resuming Sessions</li>
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="sessions-cli">Command Line Control</li>
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="sessions-naming">Naming Sessions</li>
+                        </ul>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="prompt-tips">Prompt Engineering Tips</li>
+                    </ul>
+                    
+                    <li class="nav-subitem has-nested" data-nested="extensibility">
+                        <span class="subitem-icon">🧩</span> Extensibility
+                        <span class="nested-toggle">▶</span>
+                    </li>
+                    <ul class="nested-menu" id="nested-extensibility">
+                        <li class="nav-nesteditem has-nested2" data-nested2="commands">
+                            <span>Commands</span>
+                            <span class="nested2-toggle">▶</span>
+                        </li>
+                        <ul class="nested2-menu" id="nested2-commands">
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="commands-overview">What Are Commands</li>
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="commands-creating">Creating Commands</li>
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="commands-args">Arguments & Placeholders</li>
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="commands-shell">Shell Output Integration</li>
+                        </ul>
+                        <li class="nav-nesteditem has-nested2" data-nested2="skills">
+                            <span>Skills</span>
+                            <span class="nested2-toggle">▶</span>
+                        </li>
+                        <ul class="nested2-menu" id="nested2-skills">
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="skills-overview">What Are Skills</li>
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="skills-creating">Creating Skills</li>
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="skills-loading">Loading Skills</li>
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="skills-permissions">Skill Permissions</li>
+                        </ul>
+                        <li class="nav-nesteditem has-nested2" data-nested2="agents">
+                            <span>Agents</span>
+                            <span class="nested2-toggle">▶</span>
+                        </li>
+                        <ul class="nested2-menu" id="nested2-agents">
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="agents-builtin">Built-in Agents</li>
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="agents-creating">Creating Custom Agents</li>
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="agents-invoking">Invoking Agents</li>
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="agents-orchestration">Agent Orchestration</li>
+                        </ul>
+                    </ul>
+                    
+                    <li class="nav-subitem has-nested" data-nested="plugins">
+                        <span class="subitem-icon">🔌</span> Plugins
+                        <span class="nested-toggle">▶</span>
+                    </li>
+                    <ul class="nested-menu" id="nested-plugins">
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="plugins-overview">Plugin System Overview</li>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="plugins-locations">Plugin Locations</li>
+                        <li class="nav-nesteditem has-nested2" data-nested2="plugin-events">
+                            <span>Plugin Events</span>
+                            <span class="nested2-toggle">▶</span>
+                        </li>
+                        <ul class="nested2-menu" id="nested2-plugin-events">
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="events-tool-execute">tool.execute.after</li>
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="events-session-idle">session.idle</li>
+                        </ul>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="plugins-creating">Creating Plugins</li>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="plugins-example">Example: Auto-lint Hook</li>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="plugins-npm">Loading from npm</li>
+                    </ul>
+                    
+                    <li class="nav-subitem has-nested" data-nested="mcp">
+                        <span class="subitem-icon">🌐</span> MCP Servers
+                        <span class="nested-toggle">▶</span>
+                    </li>
+                    <ul class="nested-menu" id="nested-mcp">
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="mcp-what">What is MCP</li>
+                        <li class="nav-nesteditem has-nested2" data-nested2="mcp-adding">
+                            <span>Adding MCP Servers</span>
+                            <span class="nested2-toggle">▶</span>
+                        </li>
+                        <ul class="nested2-menu" id="nested2-mcp-adding">
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="mcp-local">Local Servers</li>
+                            <li class="nav-nested2item" data-section="opencode" data-opencode-page="mcp-remote">Remote Servers</li>
+                        </ul>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="mcp-popular">Popular MCP Servers</li>
+                    </ul>
+                    
+                    <li class="nav-subitem has-nested" data-nested="production">
+                        <span class="subitem-icon">🏭</span> Production Workflows
+                        <span class="nested-toggle">▶</span>
+                    </li>
+                    <ul class="nested-menu" id="nested-production">
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="workflow-review">Multi-Agent Code Review</li>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="workflow-feature">Feature Implementation</li>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="workflow-explore">Codebase Exploration</li>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="workflow-pr">Automated PR Preparation</li>
+                    </ul>
+                    
+                    <li class="nav-subitem has-nested" data-nested="best-practices">
+                        <span class="subitem-icon">✨</span> Best Practices
+                        <span class="nested-toggle">▶</span>
+                    </li>
+                    <ul class="nested-menu" id="nested-best-practices">
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="bp-context">Managing Context</li>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="bp-cost">Cost Control</li>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="bp-debugging">Debugging Issues</li>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="bp-checklist">Getting Started Checklist</li>
+                    </ul>
+                    
+                    <li class="nav-subitem has-nested" data-nested="reference">
+                        <span class="subitem-icon">📖</span> Reference
+                        <span class="nested-toggle">▶</span>
+                    </li>
+                    <ul class="nested-menu" id="nested-reference">
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="ref-cli">CLI Commands</li>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="ref-shortcuts">Keyboard Shortcuts</li>
+                        <li class="nav-nesteditem" data-section="opencode" data-opencode-page="ref-resources">Official Resources</li>
+                    </ul>
+                </ul>
             </ul>
             <div class="sidebar-footer">
                 <button class="reset-btn" onclick="resetProgress()">
@@ -305,31 +549,91 @@
                 </div>
                 <div id="context-content"></div>
             </section>
+
+            <!-- Skills Library Section -->
+            <section id="skills-library" class="content-section">
+                <div class="section-header">
+                    <h1>📦 Claude Code Skills Library</h1>
+                    <p class="subtitle">Reusable skills formatted for Agent Skills specification</p>
+                </div>
+                <div class="skills-grid" id="skills-grid">
+                    <!-- Skills will be loaded here -->
+                </div>
+            </section>
+
+            <!-- OpenCode Documentation Section -->
+            <section id="opencode" class="content-section">
+                <div class="section-header">
+                    <h1>🤖 OpenCode Documentation</h1>
+                    <p class="subtitle">Complete guide to using OpenCode AI coding assistant</p>
+                </div>
+                <div id="opencode-page-content">
+                    <!-- Dynamic content will be loaded here -->
+                </div>
+            </section>
         </main>
     </div>
 
     <!-- Toast Notification -->
     <div id="toast" class="toast"></div>
 
-    <!-- Prompt Modal -->
-    <div id="prompt-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="modal-title">Prompt</h3>
-                <button class="modal-close" onclick="closeModal()">&times;</button>
+            <!-- Prompt Modal -->
+            <div id="prompt-modal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 id="modal-title">Prompt</h3>
+                        <button class="modal-close" onclick="closeModal()">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <pre id="modal-prompt"></pre>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="copy-btn" onclick="copyPrompt()">
+                            <span>📋</span> Copy to Clipboard
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-                <pre id="modal-prompt"></pre>
+
+            <!-- Skill Modal -->
+            <div id="skill-modal" class="modal">
+                <div class="modal-content modal-large">
+                    <div class="modal-header">
+                        <h3 id="skill-modal-title">Skill</h3>
+                        <button class="modal-close" onclick="closeSkillModal()">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="skill-modal-description" class="skill-modal-description"></div>
+                        <div class="code-section">
+                            <div class="code-header">
+                                <span>YAML Frontmatter</span>
+                            </div>
+                            <pre id="skill-modal-frontmatter" class="code-block"></pre>
+                        </div>
+                        <div class="code-section">
+                            <div class="code-header">
+                                <span>Markdown Body</span>
+                            </div>
+                            <pre id="skill-modal-body" class="code-block"></pre>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="copy-btn" onclick="copySkillFull()">
+                            <span>📋</span> Copy Full SKILL.md
+                        </button>
+                        <button class="copy-btn secondary" onclick="copySkillFrontmatter()">
+                            <span>📄</span> Copy Frontmatter
+                        </button>
+                        <button class="copy-btn secondary" onclick="copySkillBody()">
+                            <span>📝</span> Copy Body
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button class="copy-btn" onclick="copyPrompt()">
-                    <span>📋</span> Copy to Clipboard
-                </button>
-            </div>
-        </div>
-    </div>
 
     <script src="data.js"></script>
+    <script src="skills-library/skills-data.js"></script>
+    <script src="opencode-docs.js"></script>
     <script src="app.js"></script>
 </body>
 
